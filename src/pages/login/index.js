@@ -17,6 +17,8 @@ const LoginPage = () => {
   const { data: session } = useSession();
   const router = useRouter();
 
+  console.log(session);
+
 
   if (session) {
     return (
@@ -26,14 +28,15 @@ const LoginPage = () => {
         
             <h2>
               {" "}
-              Signed in as {session.user.email} <br />
+              Logado como: {session.user.name}, e-mail: {session.user.email} <br />
             </h2>
 
+          
               <button
                 className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full'
-                onClick={() => router.push("/Profile")}
+                onClick={() => router.push("/profile/complete-profile")}
               >
-                User Profile
+                Complete your profile
               </button>
               <button
                 className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full'
@@ -43,18 +46,21 @@ const LoginPage = () => {
               >
                 Sign out
               </button>
+
+
         <Bottom></Bottom>
       </main>
     );
   }
+
   return (
     <main className="min-h-screen">
       <Appbar onMenuToggle={handleMenuToggle}></Appbar>
       <Drawer isOpen={isDrawerOpen} onClose={handleMenuToggle}></Drawer>
       <h2> You are not signed in!!</h2>
         <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full'
-                onClick={() => signIn()}>
-          Sign in
+                onClick={() => signIn('google')}>
+          Sign in with google
         </button>
       <Bottom></Bottom>
     </main>
