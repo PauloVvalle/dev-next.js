@@ -3,5 +3,6 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/products": "pages/products.js",
+  "/cart": "pages/cart.js",
   "/api/auth/[...nextauth]": "pages/api/auth/[...nextauth].js"
 }

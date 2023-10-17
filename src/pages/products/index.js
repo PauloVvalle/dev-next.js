@@ -8,7 +8,7 @@ import React, {useContext, useEffect, useState} from 'react';
 import 'tailwindcss/tailwind.css'
 import { fetchProducts } from '@/app/utils/api';
 import { CartContext } from '@/app/contexts/cartContext';
-import { ProductContainer, ProductImage, CardButton } from '@/app/styles/ProductsStyles';
+import { Bottomcont, ProductsCont, ProductContainer, ProductImage, CardButton } from '@/app/styles/ProductsStyles';
 
 
 
@@ -40,21 +40,25 @@ const ProductsPage = () => {
       <Appbar onMenuToggle={handleMenuToggle}></Appbar>
       <Drawer isOpen={isDrawerOpen} onClose={handleMenuToggle}></Drawer>
           
-          <ul>
+          <ul className='flex flex-wrap justify-around m-20'>
            {products.map((product) => (
 
-           <li key={product.id}>
+           <li className='flex justify-around' key={product.id}>
+            <ProductsCont>
             <ProductContainer>
-            <ProductImage src={product.image} width={100}></ProductImage>
+            <ProductImage src={product.image} width={50}></ProductImage>
             <p>{product.title}</p>
             <p>{product.price}</p>
-            <p>{product.description}</p>
+            {/* <p>{product.description}</p> */}
             <p>{product.category}</p>
+            <Bottomcont>
             <CardButton
                onClick={() => addToCart(product)}
               className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full'>
                 Add cart</CardButton>
+                </Bottomcont>
               </ProductContainer>
+              </ProductsCont>
            </li>
 
           ))}

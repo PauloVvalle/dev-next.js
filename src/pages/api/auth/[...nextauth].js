@@ -1,7 +1,9 @@
 import NextAuth from "next-auth/next";
 import GoogleProvider from "next-auth/providers/google";
 import GithubProvider from "next-auth/providers/github";
-// import {config} from "dotenv";
+import {config} from "dotenv";
+
+config();
 
 export default NextAuth({
   providers: [
