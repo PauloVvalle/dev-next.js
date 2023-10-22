@@ -17,6 +17,8 @@ export default function Home() {
     <main className="min-h-screen">
       <Appbar onMenuToggle={handleMenuToggle}></Appbar>
       <Drawer isOpen={isDrawerOpen} onClose={handleMenuToggle}></Drawer>
+          <section className='flex'>
+          <div className='mx-auto'>
           <br></br>
           <button
             className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full'
@@ -27,7 +29,7 @@ export default function Home() {
           </button>
           <br></br>
           <button
-            className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full'
+            className='bg-black hover:bg-gray-800 text-white font-bold py-2 px-4 rounded-full'
             onClick={() => router.push("/login1")}
           >
             {" "}
@@ -41,6 +43,8 @@ export default function Home() {
             {" "}
             login facebook
           </button> */}
+          </div>
+          </section>
 
       <Bottom></Bottom>
     </main>

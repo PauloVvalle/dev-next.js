@@ -73,21 +73,21 @@ const CompleteProfileForm = ({ user }) => {
                 <label htmlFor="name" className="block text-gray-700">
                     Nome:
                 </label>
-                <input {...register('name')} id="name" className="border rounded w-full py-2 px-3"></input>
+                <input required {...register('name')} id="name" className="border rounded w-full py-2 px-3"></input>
             </div>
 
             <div className="mb-4">
                 <label htmlFor="email" className="block text-gray-700">
                     E-mail:
                 </label>
-                <input {...register('email')} id="email" className="border rounded w-full py-2 px-3"></input>
+                <input required {...register('email')} id="email" className="border rounded w-full py-2 px-3"></input>
             </div>
 
             <div className="mb-4">
                 <label htmlFor="phone" className="block text-gray-700">
                     Telefone:
                 </label>
-                <input {...register('phone')} id="phone" className="border rounded w-full py-2 px-3"></input>
+                <input required {...register('phone')} id="phone" className="border rounded w-full py-2 px-3"></input>
             </div>
 
             <div className="mb-4">
@@ -95,7 +95,7 @@ const CompleteProfileForm = ({ user }) => {
                     Imagem:
                 </label>
 
-                <input type="file" 
+                <input required type="file" 
                     onChange={handleImageChange}
                     accept="image/*" 
                     id="image" 
